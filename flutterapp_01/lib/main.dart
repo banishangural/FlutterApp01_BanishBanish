@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.blue,
           ),
           body: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Column(
                 children: <Widget>[
@@ -28,10 +30,14 @@ class MyApp extends StatelessWidget {
               ),
               Column(
                 children: <Widget>[
-                  ContainerWidget(Colors.yellow, Colors.yellow, 'Container 3',
-                      Colors.black, 14),
-                  ContainerWidget(
-                      Colors.blue, Colors.blue, 'Container 4', Colors.black, 14)
+                  Expanded(
+                    child: ContainerWidget(Colors.yellow, Colors.yellow,
+                        'Container 3', Colors.black, 14),
+                  ),
+                  Expanded(
+                    child: ContainerWidget(Colors.blue, Colors.blue,
+                        'Container 4', Colors.black, 14),
+                  ),
                 ],
               ),
               Column(
