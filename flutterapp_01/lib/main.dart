@@ -20,7 +20,24 @@ class MyApp extends StatelessWidget {
             children: <Widget>[
               Column(
                 children: <Widget>[
-                  ContainerWidget(Colors.green, 'abc'),
+                  ContainerWidget(Colors.orange, Colors.black, 'Container 1',
+                      Colors.black, 14),
+                  ContainerWidget(Colors.white, Colors.white, 'Container 2',
+                      Colors.black, 14)
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  ContainerWidget(Colors.yellow, Colors.yellow, 'Container 3',
+                      Colors.black, 14),
+                  ContainerWidget(
+                      Colors.blue, Colors.blue, 'Container 4', Colors.black, 14)
+                ],
+              ),
+              Column(
+                children: <Widget>[
+                  ContainerWidget(Colors.black, Colors.white, 'Container 5',
+                      Colors.white, 14),
                 ],
               )
             ],
@@ -31,8 +48,12 @@ class MyApp extends StatelessWidget {
 
 class ContainerWidget extends StatelessWidget {
   final Color bgColor;
-  final String textInBox;
-  ContainerWidget(this.bgColor, this.textInBox);
+  final Color borderColor;
+  final String textInside;
+  final Color textColor;
+  final double fontSize;
+  ContainerWidget(this.bgColor, this.borderColor, this.textInside,
+      this.textColor, this.fontSize);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,8 +61,15 @@ class ContainerWidget extends StatelessWidget {
       height: 100,
       width: 100,
       decoration: BoxDecoration(
-        border: Border.all(width: 3),
+        border: Border.all(width: 3, color: borderColor),
         color: bgColor,
+      ),
+      child: Text(
+        textInside,
+        style: TextStyle(
+          color: textColor,
+          fontSize: fontSize,
+        ),
       ),
     );
   }
