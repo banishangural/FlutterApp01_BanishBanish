@@ -44,21 +44,44 @@ class MyApp extends StatelessWidget {
                 ],
               ),
               Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: <Widget>[
-                  Container(
-                    //margin: EdgeInsets.all(10.0),
-                    padding: EdgeInsets.all(10.0),
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        border: Border.all(width: 3, color: Colors.white),
-                        color: Colors.black,
-                        shape: BoxShape.circle),
-                    child: Center(
+                  Flexible(
+                    fit: FlexFit.tight,
+                    flex: 1,
+                    child: Container(
+                      //margin: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(10.0),
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 3, color: Colors.white),
+                          color: Colors.black,
+                          shape: BoxShape.circle),
+                      child: Center(
+                        child: Text(
+                          'Container 5',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      //margin: EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(10.0),
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 3, color: Colors.red),
+                          color: Colors.red),
                       child: Text(
-                        'Container 5',
+                        'Con 6',
                         style: TextStyle(
-                          color: Colors.white,
+                          fontSize: 30,
                         ),
                       ),
                     ),
