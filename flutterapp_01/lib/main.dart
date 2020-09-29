@@ -24,8 +24,11 @@ class MyApp extends StatelessWidget {
                 children: <Widget>[
                   ContainerWidget(Colors.orange, Colors.black, 'Container 1',
                       Colors.black, 14),
-                  ContainerWidget(Colors.white, Colors.white, 'Container 2',
-                      Colors.black, 14)
+                  RotationTransition(
+                    turns: AlwaysStoppedAnimation(45 / 360),
+                    child: ContainerWidget(Colors.white, Colors.white,
+                        'Container 2', Colors.black, 14),
+                  )
                 ],
               ),
               Column(
@@ -42,8 +45,24 @@ class MyApp extends StatelessWidget {
               ),
               Column(
                 children: <Widget>[
-                  ContainerWidget(Colors.black, Colors.white, 'Container 5',
-                      Colors.white, 14),
+                  Container(
+                    //margin: EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(10.0),
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 3, color: Colors.white),
+                        color: Colors.black,
+                        shape: BoxShape.circle),
+                    child: Center(
+                      child: Text(
+                        'Container 5',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               )
             ],
@@ -52,6 +71,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//margin: EdgeInsets.all(100.0)
 class ContainerWidget extends StatelessWidget {
   final Color bgColor;
   final Color borderColor;
@@ -70,11 +90,13 @@ class ContainerWidget extends StatelessWidget {
         border: Border.all(width: 3, color: borderColor),
         color: bgColor,
       ),
-      child: Text(
-        textInside,
-        style: TextStyle(
-          color: textColor,
-          fontSize: fontSize,
+      child: Center(
+        child: Text(
+          textInside,
+          style: TextStyle(
+            color: textColor,
+            fontSize: fontSize,
+          ),
         ),
       ),
     );
