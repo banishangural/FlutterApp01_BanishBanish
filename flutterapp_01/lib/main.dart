@@ -34,12 +34,48 @@ class MyApp extends StatelessWidget {
               Column(
                 children: <Widget>[
                   Expanded(
-                    child: ContainerWidget(Colors.yellow, Colors.yellow,
-                        'Container 3', Colors.black, 14),
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 3, color: Colors.yellow),
+                        color: Colors.yellow,
+                      ),
+                      child: Container(
+                        alignment: Alignment.bottomCenter,
+                        child: Text(
+                          'Container 3',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
                   Expanded(
-                    child: ContainerWidget(Colors.blue, Colors.blue,
-                        'Container 4', Colors.black, 14),
+                    child: Container(
+                      padding: EdgeInsets.all(10.0),
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                        border: Border.all(width: 3, color: Colors.blue),
+                        color: Colors.blue,
+                      ),
+                      child: Container(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          'Container 4',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ),
+                    ),
+                    //ContainerWidget(Colors.blue, Colors.blue,
+                    //'Container 4', Colors.black, 14),
                   ),
                 ],
               ),
@@ -122,6 +158,7 @@ class ContainerWidget extends StatelessWidget {
           ),
         ),
       ),
+      alignment: Alignment(1, 1),
     );
   }
 }
