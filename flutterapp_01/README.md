@@ -1,5 +1,7 @@
 # flutterapp_01
 
+Name: Banish Banish
+
 A new Flutter project.
 
 ## Getting Started
